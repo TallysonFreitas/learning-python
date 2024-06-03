@@ -4,12 +4,12 @@ class TreeNode:
         self.left = None
         self.right = None
 
-def preOrderTraversal(node):
+def pre_order_traversal(node):
     if node is None:
         return
     print(node.data, end=", ")
-    preOrderTraversal(node.left)
-    preOrderTraversal(node.right)
+    pre_order_traversal(node.left)
+    pre_order_traversal(node.right)
 
 def inOrderTraversal(node):
     if node is None:
@@ -52,9 +52,11 @@ print("root.right.left.data:", root.right.left.data)
 
 
 # Traverse
-preOrderTraversal(root)
+pre_order_traversal(root)
 print('\n')
 inOrderTraversal(root)
 print('\n')
 postOrderTraversal(root)
+
+def createBinaryTree(array: list) -> TreeNode:
 
