@@ -25,14 +25,25 @@ def postOrderTraversal(node):
     postOrderTraversal(node.right)
     print(node.data, end=", ")
 
-root = TreeNode('R')
-nodeA = TreeNode('A')
-nodeB = TreeNode('B')
-nodeC = TreeNode('C')
-nodeD = TreeNode('D')
-nodeE = TreeNode('E')
-nodeF = TreeNode('F')
-nodeG = TreeNode('G')
+def insert(tree: TreeNode, value: int):
+    if tree is None:
+        return TreeNode(value)
+    else:
+        if tree.data > value:
+            tree.left = insert(tree.left, value)
+        elif tree.data < value:
+            tree.right = insert(tree.right, value)
+    return tree
+
+
+root = TreeNode(10)
+nodeA = TreeNode(5)
+nodeB = TreeNode(15)
+nodeC = TreeNode(3)
+nodeD = TreeNode(7)
+nodeE = TreeNode(13)
+nodeF = TreeNode(19)
+nodeG = TreeNode(17)
 
 root.left = nodeA
 root.right = nodeB
@@ -58,5 +69,8 @@ inOrderTraversal(root)
 print('\n')
 postOrderTraversal(root)
 
-def createBinaryTree(array: list) -> TreeNode:
 
+
+insert(root, 50)
+print('\n')
+inOrderTraversal(root)
